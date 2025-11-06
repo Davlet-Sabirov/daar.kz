@@ -1,0 +1,42 @@
+.myContainer {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 5rem 15px;
+  text-align: center;
+}
+.catalogTitle {
+  padding-bottom: 3rem;
+  font-weight: 700;
+}
+.productCard {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+.productCard img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.catalogBtn {
+    font-size: 1.2rem;
+    padding: 28px 40px;
+    margin-top: 3rem;
+    border-radius: 40px;
+    background-color: #5c7246 !important;
+    border-color: #5c7246 !important;
+    color: white !important;
+    
+}
+.catalogBtn:hover,
+.catalogBtn:focus {
+  background-color: #648b3c !important;
+  border-color: #648b3c !important;
+  color: white !important;
+}

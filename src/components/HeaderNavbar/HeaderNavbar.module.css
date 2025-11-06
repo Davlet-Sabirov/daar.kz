@@ -1,0 +1,83 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  background: inherit;
+}
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+.menuDesktop {
+  flex-grow: 1;
+  justify-content: center;
+  margin: 0 20px;
+  background: inherit;
+}
+.drawerMenu {
+  border-inline-end: none !important;
+}
+.navDropdown {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(0, 0, 0, 0.88);
+}
+.navDropdown:hover {
+  color: black;
+}
+.navBurger {
+  display: none;
+}
+@media (max-width: 1120px) {
+  .menuDesktop {
+    display: none;
+  }
+  .dropdownDesktop {
+    display: none;
+  }
+  .navBurger {
+    display: grid;
+    place-content: center;
+  }
+}
+
+.dropdownMob {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.menuDesktop :global(.ant-menu-item) {
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+
+
+:global(.ant-menu-item:hover),
+:global(.ant-menu-item-selected) {
+  color: orange !important;
+}
+
+:global(.ant-menu-item-selected::after),
+:global(.ant-menu-item:hover::after) {
+  border-bottom-color: orange !important;
+}
+
+.activeLink {
+  position: relative;
+  color: orange !important;
+}
+
+.activeLink::after {
+  content: "";
+  position: absolute;
+  bottom: -23px;
+  border-bottom: 2px solid orange;
+  inset-inline: 0;
+}
+
+
+

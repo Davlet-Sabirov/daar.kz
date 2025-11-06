@@ -1,0 +1,36 @@
+.myContainer {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+a:hover {
+    color: orange;
+}
+.socialIcons svg {
+  font-size: 24px;
+  cursor: pointer; 
+  transition: color 0.2s;
+}
+.socialIcons svg:hover {
+  color: orange; 
+}
+.iconTg {
+  display: inline-block;
+  object-fit: contain;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(100%) hue-rotate(0deg);
+}
+.iconTg:hover {
+  filter: brightness(0) saturate(100%) invert(63%) sepia(95%) saturate(523%) hue-rotate(1deg) brightness(102%) contrast(103%);
+}
+:global(a.ant-typography) {
+  color: black;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+:global(a.ant-typography:hover) {
+  color: orange;
+}
