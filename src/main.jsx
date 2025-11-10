@@ -10,6 +10,8 @@ import SeedsPage from "./pages/articles/SeedsPage/SeedsPage.jsx";
 import NutsPage from "./pages/articles/NutsPage/NutsPage.jsx";
 import ContactPage from "./pages/ContactPage/ContactPage.jsx";
 import AboutPage from "./pages/AboutPage/AboutPage.jsx";
+import TermsPage from "./pages/TermsPage/TermsPage.jsx";
+import PrivacyPage from "./pages/PrivacyPage/PrivacyPage.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -23,6 +25,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/news/nuts" element={<NutsPage />} />
         <Route path="/contacts" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

@@ -4,6 +4,13 @@
   margin: 0 auto;
   padding: 0 15px;
 }
+.myContainer2 {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 15px;
+  background-color: #eee7dd;
+}
 .articleImage {
   padding: 1.5rem;
   object-fit: cover;

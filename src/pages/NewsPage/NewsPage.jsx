@@ -40,36 +40,40 @@ export default function NewsPage() {
         </Header>
       </div>
 
-      <Content className={styles.myContainer}>
-        <Title
-          align="middle"
-          level={2}
-          style={{ marginTop: "5rem", marginBottom: "4rem" }}
-        >
-          Новости и статьи
-        </Title>
-        <Row gutter={[24, 24]} style={{ marginBottom: "5rem" }}>
-          {articles.map((article) => (
-            <Col xs={24} sm={12} md={12} key={article.id}>
-              <Link to={article.link} className={styles.newsLink}>
-                <Card
-                  hoverable
-                  cover={
-                    <img
-                      alt={article.title}
-                      src={article.image}
-                      className={styles.articleImage}
-                    />
-                  }
-                  className={styles.newsCard}
-                >
-                  <Title level={4}>{article.title}</Title>
-                  <Paragraph type="secondary">{article.description}</Paragraph>
-                </Card>
-              </Link>
-            </Col>
-          ))}
-        </Row>
+      <Content style={{ backgroundColor: "#eee7dd" }}>
+        <div className={styles.myContainer}>
+          <Title
+            align="middle"
+            level={2}
+            style={{ marginTop: "5rem", marginBottom: "4rem" }}
+          >
+            Новости и статьи
+          </Title>
+          <Row gutter={[24, 24]} style={{ marginBottom: "5rem" }}>
+            {articles.map((article) => (
+              <Col xs={24} sm={12} md={12} key={article.id}>
+                <Link to={article.link} className={styles.newsLink}>
+                  <Card
+                    hoverable
+                    cover={
+                      <img
+                        alt={article.title}
+                        src={article.image}
+                        className={styles.articleImage}
+                      />
+                    }
+                    className={styles.newsCard}
+                  >
+                    <Title level={4}>{article.title}</Title>
+                    <Paragraph type="secondary">
+                      {article.description}
+                    </Paragraph>
+                  </Card>
+                </Link>
+              </Col>
+            ))}
+          </Row>
+        </div>
       </Content>
 
       <Footer style={{ padding: 0 }}>

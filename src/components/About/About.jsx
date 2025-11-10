@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const { Title, Paragraph } = Typography;
 
-export default function About() {
+export default function About({ isMainPage }) {
   return (
     <div className={styles.myContainer}>
       <Row gutter={[40, 40]} align="top">
@@ -31,11 +31,13 @@ export default function About() {
             лучшее - детям!
             <br /> <br />
           </Paragraph>
-          <Link to="/about">
-            <Button color="default" size="large" className={styles.aboutBtn}>
-              Подробнее
-            </Button>
-          </Link>
+          {!isMainPage && (
+            <Link to="/about">
+              <Button color="default" size="large" className={styles.aboutBtn}>
+                Подробнее
+              </Button>
+            </Link>
+          )}
         </Col>
       </Row>
     </div>

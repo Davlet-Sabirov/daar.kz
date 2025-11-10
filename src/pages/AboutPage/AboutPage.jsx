@@ -19,7 +19,7 @@ export default function AboutPage() {
       </div>
 
       <Content style={{ backgroundColor: "#eee7dd" }}>
-        <About />
+        <About isMainPage={true} />
       </Content>
 
       <Footer style={{ padding: 0 }}>

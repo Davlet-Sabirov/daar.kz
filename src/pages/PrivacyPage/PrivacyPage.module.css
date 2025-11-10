@@ -1,0 +1,29 @@
+.myContainer {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.breadcrumbs ul {
+    display: flex;
+    gap: 8px;
+    margin-top: 5rem;
+    transition: all 0.3s ease;
+}
+.breadcrumbs ul li a:hover {
+    text-decoration: underline;
+}
+.politics {
+    padding: 5rem 0;
+}
+.politics h1 {
+    text-transform: uppercase;
+    margin-bottom: 3rem !important;
+} 
+.politics h4 {
+    margin: 40px 0;
+}
+.politics .wpBlockTable th, .politics .wpBlockTable td {
+    border: 1px solid grey;
+    padding: .5em;
+}

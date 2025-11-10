@@ -1,0 +1,25 @@
+.myContainer {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.breadcrumbs ul {
+    display: flex;
+    gap: 8px;
+    margin-top: 5rem;
+    transition: all 0.3s ease;
+}
+.breadcrumbs ul li a:hover {
+    text-decoration: underline;
+}
+.terms {
+    padding: 5rem 0;
+}
+.terms h1 {
+    text-transform: uppercase;
+    margin-bottom: 3rem !important;
+}
+.terms h4 {
+    margin: 1rem 0;
+}

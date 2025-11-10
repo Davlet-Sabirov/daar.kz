@@ -44,7 +44,7 @@ const App = () => {
             <Catalog full={false} />
           </div>
           <div style={{ backgroundColor: "#f5f5f5" }}>
-            <About />
+            <About isMainPage={false} />
           </div>
           <div style={{ backgroundColor: "#f3a852ff" }}>
             <RequestForm />

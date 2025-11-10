@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Myfooter.module.css";
 import logo3 from "../../assets/logo3.svg";
 import tg from "../../assets/icons/tg.svg";
@@ -83,8 +84,8 @@ export default function Myfooter() {
               Rights Reserved.
             </p>
             <Space direction="horizontal" split="|">
-              <a href="#">Terms of use</a>
-              <a href="#">Privacy Policy</a>
+              <Link to={"/terms"}>Terms of use</Link>
+              <Link to={"/privacy"}>Privacy Policy</Link>
             </Space>
           </Space>
         </Col>
