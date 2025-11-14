@@ -1,4 +1,5 @@
 import styles from "./Hero.module.css";
+import { useTranslation } from "react-i18next";
 import pack_1 from "../../assets/img/pack_1.png";
 import pack_2 from "../../assets/img/pack_2.png";
 import { Typography, Button, Row, Col } from "antd";
@@ -9,13 +10,13 @@ import { Autoplay, EffectCards, Pagination } from "swiper/modules";
 import "swiper/css";
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <main className={styles.myContainer}>
       <Row align="middle">
         <Col sm={24} md={12} className={styles.heroA}>
-          <Title className={styles.claim}>
-            Cвежие семечки, орешки и курт от производителя
-          </Title>
+          <Title className={styles.claim}>{t("hero")}</Title>
           <Typography.Link href="https://t.me/MohirFayz1991">
             <Button
               color="orange"
@@ -23,7 +24,7 @@ export default function Hero() {
               size="large"
               className={styles.heroBtn}
             >
-              Связаться
+              {t("heroBtn")}
             </Button>
           </Typography.Link>
         </Col>

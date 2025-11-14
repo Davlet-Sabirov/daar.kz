@@ -2,10 +2,13 @@ import { useState } from "react";
 import { Row, Col, Typography, Input, Button, Upload, message } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import styles from "./RequestForm.module.css";
+import { useTranslation } from "react-i18next";
 
 const { Title, Paragraph } = Typography;
 
 export default function RequestForm() {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -102,14 +105,11 @@ export default function RequestForm() {
       <Row gutter={[40, 40]} align="top">
         {/* Левая часть */}
         <Col xs={24} md={12}>
-          <Title level={2}>Заполните форму и мы изучим ваше предложение</Title>
-          <Paragraph>
-            Напишите нам! Наш менеджер изучит вашу заявку и свяжется с вами в
-            течение 20 минут.
-          </Paragraph>
+          <Title level={2}>{t("formTitle")}</Title>
+          <Paragraph>{t("formDesc")}</Paragraph>
 
           <Paragraph>
-            <strong>Телефон:</strong>
+            <strong>{t("formPhone")}</strong>
             <br />
             <Typography.Link href="tel:+77750772000">
               +7 (775) 077-20-00
@@ -137,7 +137,7 @@ export default function RequestForm() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Имя / Название компании"
+            placeholder={t("formField1")}
             style={{
               marginBottom: "1rem",
               padding: "1.5rem",
@@ -148,7 +148,7 @@ export default function RequestForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="Номер телефона"
+            placeholder={t("formField2")}
             style={{
               marginBottom: "1rem",
               padding: "1.5rem",
@@ -162,22 +162,22 @@ export default function RequestForm() {
               onChange={handleFileChange}
               fileList={fileList}
             >
-              <Button icon={<UploadOutlined />}>Добавить файл</Button>
+              <Button icon={<UploadOutlined />}>{t("formFile")}</Button>
             </Upload>
           </div>
           <Input.TextArea
             name="comment"
             value={formData.comment}
             onChange={handleChange}
-            placeholder="Ваш комментарий"
+            placeholder={t("formField3")}
             rows={4}
             style={{ marginBottom: "1rem", padding: "1.5rem" }}
           />
           <Row gutter={[25, 15]} align="middle">
             <Col xs={24} md={12}>
               <Paragraph className={styles.spanBtn}>
-                Нажимая кнопку <strong>«Отправить заявку»</strong>, вы даёте
-                согласие на обработку персональных данных
+                {t("formBtnDesc1")} <strong>{t("formBtnDesc2")}</strong>,{" "}
+                {t("formBtnDesc3")}
               </Paragraph>
             </Col>
             <Col xs={24} md={12} align="middle">
@@ -188,7 +188,7 @@ export default function RequestForm() {
                 onClick={handleSubmit}
                 className={styles.formBtn}
               >
-                Отправить заявку
+                {t("formBtn")}
               </Button>
             </Col>
           </Row>

@@ -1,0 +1,55 @@
+{  
+    "nav1": "HOME",
+    "nav2": "PRODUCTS",
+    "nav3": "NEWS & PROMO",
+    "nav4": "CONTACTS",
+    "nav5": "ABOUT US",
+
+    "hero": "Fresh seeds, nuts and kurt from the manufacturer",
+    "heroBtn": "Contact us",
+    
+    "prodTitle": "Our products",
+    "cardTitle1": "Roasted seeds, salted",
+    "cardTitle2": "Roasted seeds, unsalted",
+    "cardTitle3": "Kurt Classic",
+    "cardTitle4": "Kurt Classic",
+    "cardTitle5": "Apricot kernels, salted",
+    "cardTitle6": "Cashews with salt",
+    "cardTitle7": "Peanuts with salt",
+    "cardTitle8": "Pistachios with salt",
+    "cardTitle9": "Almonds with salt",
+
+    "cardDesc1": "Variety: Large, Country: Kazakhstan",
+    "cardDesc2": "Variety: Large, Country: Kazakhstan",
+    "cardDesc3": "Weight: 150g - 30 pcs. Country Kazakhstan",
+    "cardDesc4": "Weight: 30 / 47 / 60g. Country: Kazakhstan",
+    "cardDesc5": "Weight: 50g. Country: Kazakhstan",
+    "cardDesc6": "Weight: 50g. Country: Kazakhstan",
+    "cardDesc7": "Weight: 50g. Country: Kazakhstan",
+    "cardDesc8": "Weight: 50g. Country: Kazakhstan",
+    "cardDesc9": "Weight: 50g. Country: Kazakhstan",
+
+    "prodBtn": "All products",
+
+    "aboutTitle": "About us",
+    "aboutDesc1": "Our products",
+    "aboutDesc2": " are produced in the heart of Kazakhstan, under the generous sun and with respect for traditions. We believe that taste is born from care: each seed is carefully selected, roasted according to a time-tested recipe, and lovingly packaged.",
+    "aboutDesc3": "Our goal is to preserve the true taste of childhood, that familiar aroma of fresh, crunchy seeds. We are proud to create everything here, in our native land, with warmth and attention to every detail.",
+    "aboutDesc4": " is quality that families trust. After all, the best is for children!",
+
+    "aboutBtn": "Read more",
+
+    "formTitle": "Fill out the form and we will review your proposal",
+    "formDesc": "Contact us! Our manager will review your request and contact you within 20 minutes",
+    "formPhone": "Phone:",
+
+    "formField1": "Your name / Compane name",
+    "formField2": "Phone number",
+    "formField3": "Your comment",
+
+    "formFile": "Add file",
+    "formBtnDesc1": "By clicking the",
+    "formBtnDesc2": "«Submit button»",
+    "formBtnDesc3": "you consent to the processing of your personal data",
+    "formBtn": "Submit application"
+}

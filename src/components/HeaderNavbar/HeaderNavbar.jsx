@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Layout,
   Menu,
@@ -17,6 +18,15 @@ const { Header } = Layout;
 const { Text } = Typography;
 
 const HeaderNavbar = () => {
+  const { i18n, t } = useTranslation();
+  const [currentLang, setCurrentLang] = useState(i18n.language || "ru");
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem("lang", lang);
+    setCurrentLang(lang);
+  };
+
   const [visible, setVisible] = useState(false);
 
   const showDrawer = () => setVisible(true);
@@ -29,11 +39,9 @@ const HeaderNavbar = () => {
         <NavLink
           to="/"
           end
-          className={({ isActive }) =>
-            isActive ? styles.activeLink : styles.navLink
-          }
+          className={({ isActive }) => isActive && styles.activeLink}
         >
-          ГЛАВНАЯ
+          {t("nav1")}
         </NavLink>
       ),
     },
@@ -42,11 +50,9 @@ const HeaderNavbar = () => {
       label: (
         <NavLink
           to="/catalog"
-          className={({ isActive }) =>
-            isActive ? styles.activeLink : styles.navLink
-          }
+          className={({ isActive }) => isActive && styles.activeLink}
         >
-          ПРОДУКЦИЯ
+          {t("nav2")}
         </NavLink>
       ),
     },
@@ -55,11 +61,9 @@ const HeaderNavbar = () => {
       label: (
         <NavLink
           to="/news"
-          className={({ isActive }) =>
-            isActive ? styles.activeLink : styles.navLink
-          }
+          className={({ isActive }) => isActive && styles.activeLink}
         >
-          НОВОСТИ И АКЦИИ
+          {t("nav3")}
         </NavLink>
       ),
     },
@@ -68,11 +72,9 @@ const HeaderNavbar = () => {
       label: (
         <NavLink
           to="/contacts"
-          className={({ isActive }) =>
-            isActive ? styles.activeLink : styles.navLink
-          }
+          className={({ isActive }) => isActive && styles.activeLink}
         >
-          КОНТАКТЫ
+          {t("nav4")}
         </NavLink>
       ),
     },
@@ -81,11 +83,9 @@ const HeaderNavbar = () => {
       label: (
         <NavLink
           to="/about"
-          className={({ isActive }) =>
-            isActive ? styles.activeLink : styles.navLink
-          }
+          className={({ isActive }) => isActive && styles.activeLink}
         >
-          О КОМПАНИИ
+          {t("nav5")}
         </NavLink>
       ),
     },
@@ -104,28 +104,66 @@ const HeaderNavbar = () => {
 
   const navLangs = [
     {
+      key: "lang-ru",
+      label: (
+        <div
+          onClick={() => changeLanguage("ru")}
+          style={{ display: "flex", alignItems: "center" }}
+        >
+          <img
+            src="https://flagcdn.com/w20/ru.png"
+            alt="Russian Flag"
+            style={{ width: 16, marginRight: 8 }}
+          />
+          РУССКИЙ
+        </div>
+      ),
+    },
+    {
       key: "lang-en",
-      label: "ENGLISH",
-      icon: (
-        <img
-          src="https://flagcdn.com/w20/gb.png"
-          alt="English Flag"
-          style={{ width: 16, marginRight: 8 }}
-        />
+      label: (
+        <div
+          onClick={() => changeLanguage("en")}
+          style={{ display: "flex", alignItems: "center" }}
+        >
+          <img
+            src="https://flagcdn.com/w20/gb.png"
+            alt="English Flag"
+            style={{ width: 16, marginRight: 8 }}
+          />
+          ENGLISH
+        </div>
       ),
     },
     {
       key: "lang-kz",
-      label: "ҚАЗАҚ",
-      icon: (
-        <img
-          src="https://flagcdn.com/w20/kz.png"
-          alt="Kazakh Flag"
-          style={{ width: 16, marginRight: 8 }}
-        />
+      label: (
+        <div
+          onClick={() => changeLanguage("kz")}
+          style={{ display: "flex", alignItems: "center" }}
+        >
+          <img
+            src="https://flagcdn.com/w20/kz.png"
+            alt="Kazakh Flag"
+            style={{ width: 16, marginRight: 8 }}
+          />
+          ҚАЗАҚ
+        </div>
       ),
     },
   ];
+
+  const currentFlag = {
+    ru: "https://flagcdn.com/w20/ru.png",
+    en: "https://flagcdn.com/w20/gb.png",
+    kz: "https://flagcdn.com/w20/kz.png",
+  };
+
+  const currentLangLabel = {
+    ru: "РУССКИЙ",
+    en: "ENGLISH",
+    kz: "ҚАЗАҚ",
+  };
 
   return (
     <Header className={styles.header}>
@@ -153,11 +191,11 @@ const HeaderNavbar = () => {
         <Dropdown menu={{ items: navLangs }} trigger={["click"]}>
           <a href="#" className={styles.navDropdown}>
             <img
-              src="https://flagcdn.com/w20/ru.png"
-              alt="Russian Flag"
+              src={currentFlag[currentLang]}
+              alt="Flag"
               style={{ width: 16 }}
             />
-            <Text strong>РУССКИЙ</Text>
+            <Text strong>{currentLangLabel[currentLang]}</Text>
             <DownOutlined />
           </a>
         </Dropdown>
