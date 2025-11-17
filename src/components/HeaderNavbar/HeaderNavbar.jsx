@@ -17,7 +17,7 @@ import styles from "./HeaderNavbar.module.css";
 const { Header } = Layout;
 const { Text } = Typography;
 
-const HeaderNavbar = () => {
+export default function HeaderNavbar() {
   const { i18n, t } = useTranslation();
   const [currentLang, setCurrentLang] = useState(i18n.language || "ru");
 
@@ -181,15 +181,17 @@ const HeaderNavbar = () => {
 
       <Space size="large" split="|" className={styles.dropdownDesktop}>
         <Dropdown menu={{ items: navPhones }} trigger={["click"]}>
-          <a href="tel:+77750772000" className={styles.navDropdown}>
+          <div className={styles.navDropdown}>
             <PhoneOutlined />
-            <Text strong>+7 (775) 077-20-00</Text>
+            <a href="tel:+77750772000">
+              <Text strong>+7 (775) 077-20-00</Text>
+            </a>
             <DownOutlined />
-          </a>
+          </div>
         </Dropdown>
 
         <Dropdown menu={{ items: navLangs }} trigger={["click"]}>
-          <a href="#" className={styles.navDropdown}>
+          <div className={styles.navDropdown}>
             <img
               src={currentFlag[currentLang]}
               alt="Flag"
@@ -197,7 +199,7 @@ const HeaderNavbar = () => {
             />
             <Text strong>{currentLangLabel[currentLang]}</Text>
             <DownOutlined />
-          </a>
+          </div>
         </Dropdown>
       </Space>
 
@@ -230,20 +232,18 @@ const HeaderNavbar = () => {
           </Dropdown>
 
           <Dropdown menu={{ items: navLangs }} trigger={["click"]}>
-            <a href="#" className={styles.navDropdown}>
+            <div className={styles.navDropdown}>
               <img
-                src="https://flagcdn.com/w20/ru.png"
-                alt="Russian Flag"
+                src={currentFlag[currentLang]}
+                alt="Flag"
                 style={{ width: 16 }}
               />
-              <Text strong>РУССКИЙ</Text>
+              <Text strong>{currentLangLabel[currentLang]}</Text>
               <DownOutlined />
-            </a>
+            </div>
           </Dropdown>
         </Space>
       </Drawer>
     </Header>
   );
-};
-
-export default HeaderNavbar;
+}

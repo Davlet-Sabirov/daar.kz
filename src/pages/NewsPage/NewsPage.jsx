@@ -5,30 +5,34 @@ import HeaderNavbar from "./../../components/HeaderNavbar/HeaderNavbar";
 import Myfooter from "./../../components/MyFooter/MyFooter";
 import seedsImg from "../../assets/img/seedsImg.webp";
 import nutsImg from "../../assets/img/nutsImg.webp";
+import { useTranslation } from "react-i18next";
 
 const { Title, Paragraph } = Typography;
 const { Header, Content, Footer } = Layout;
 
-const articles = [
-  {
-    id: 1,
-    title: "Польза семечек: витамины и микроэлементы",
-    description:
-      "Семечки подсолнечника - это не только вкусная закуска, но и источник полезных веществ: витаминов E, B и минералов, укрепляющих сердце и кожу.",
-    image: seedsImg,
-    link: "/news/seeds",
-  },
-  {
-    id: 2,
-    title: "Орешки - польза для мозга и энергии",
-    description:
-      "Миндаль, кешью и грецкие орехи богаты омега-3, магнием и антиоксидантами, поддерживающими память и концентрацию.",
-    image: nutsImg,
-    link: "/news/nuts",
-  },
-];
+
+
 
 export default function NewsPage() {
+  const {t} = useTranslation();
+
+  const articles = [
+    {
+      id: 1,
+      title: t("artclTitle_1"),
+      description: t("artclDesc_1"),
+      image: seedsImg,
+      link: "/news/seeds",
+    },
+    {
+      id: 2,
+      title: t("artclTitle_2"),
+      description: t("artclDesc_2"),
+      image: nutsImg,
+      link: "/news/nuts",
+    },
+  ];
+
   return (
     <Layout>
       <div style={{ backgroundColor: "#f5f5f5" }}>
@@ -47,7 +51,7 @@ export default function NewsPage() {
             level={2}
             style={{ marginTop: "5rem", marginBottom: "4rem" }}
           >
-            Новости и статьи
+            {t("newsTitle")}
           </Title>
           <Row gutter={[24, 24]} style={{ marginBottom: "5rem" }}>
             {articles.map((article) => (

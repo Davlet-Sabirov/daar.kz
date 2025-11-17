@@ -46,11 +46,19 @@ export default function Myfooter() {
                 </Typography.Link>
               </Space>
               <Space className={styles.socialIcons} size="middle">
-                <Typography.Link href="#">
+                <Typography.Link
+                  href="https://www.instagram.com/daar.kz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <InstagramOutlined />
                 </Typography.Link>
                 <TgIcon />
-                <Typography.Link href="#">
+                <Typography.Link
+                  href="https://www.instagram.com/daar.kz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FacebookOutlined />
                 </Typography.Link>
                 <Typography.Link href="tel:+77750772000">
